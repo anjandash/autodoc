@@ -1,0 +1,1 @@
+Translate text from pdfs using DeepL API
