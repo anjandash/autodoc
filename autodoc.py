@@ -48,13 +48,19 @@ def main():
     translator = deepl.Translator(config.auth_key) 
     target_language = "FR"
 
+    fin_translation = ""
     with fitz.open(pdf_file) as doc:
         text = ""
         for page in doc:
             text = page.get_text()
             result = translator.translate_text(text, target_lang=target_language) 
             translation = result.text
-            print(translation)
+            fin_translation = fin_translation + translation
+
+    txt_file = os.path.join(pathlib.Path(__file__).resolve().parent, "files", "sample.txt")
+    with open(txt_file, "w") as f:
+        f.write(fin_translation)
+            
 
 if __name__ == "__main__":
     main()
