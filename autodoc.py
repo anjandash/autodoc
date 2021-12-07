@@ -57,7 +57,7 @@ def main():
             translation = result.text
             fin_translation = fin_translation + translation
 
-    txt_file = os.path.join(pathlib.Path(__file__).resolve().parent, "files", "sample.txt")
+    txt_file = os.path.join(pathlib.Path(__file__).resolve().parent, "files", "sample_" + target_language + ".txt")
     with open(txt_file, "w") as f:
         f.write(fin_translation)
             
