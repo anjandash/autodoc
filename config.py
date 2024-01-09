@@ -1,1 +1,6 @@
-auth_key="7103926d-8063-d36f-f49c-f079ea0afbcf:fx"
+import os   
+import pathlib                                                                                                                                                                                                       
+import dotenv
+
+dotenv.load_dotenv(pathlib.Path(".env"))
+auth_key=os.getenv("DEEPLAUTH")
